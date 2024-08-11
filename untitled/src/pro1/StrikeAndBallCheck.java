@@ -1,37 +1,53 @@
 package pro1;
 
 public class StrikeAndBallCheck {
-    PrintStrikeAndBallCount printStrikeAndBallCount = new PrintStrikeAndBallCount();
-    SetRandomNumber setRandomNumber = new SetRandomNumber();
-    SetInputNumber setInputNumber = new SetInputNumber();
-    public int strikeCheck(int i, int j, int strikeNum){
-        if(setRandomNumber.randNum[i] == setInputNumber.inputNum[j] && i == j){
-            return strikeNum+1;
-        }
-        else{
-            return strikeNum;
+    // PrintStrikeAndBallCount printStrikeAndBallCount = new PrintStrikeAndBallCount();
+    Result result = new Result();
+    int[] randNum = new int[3];
+    int[] inputNum = new int[3];
+
+    public void strikeCheck(int i, int j){
+        if(randNum[i] == inputNum[j] && i == j){
+            result.countIncreaseStrike();
         }
     }
-    public int ballCheck(int i, int j, int ballNum) {
-        if (setRandomNumber.randNum[i] == setInputNumber.inputNum[j] && i != j) {
-            return ballNum + 1;
-        }
-        else{
-            return ballNum;
+    public void ballCheck(int i, int j) {
+        if (randNum[i] == inputNum[j] && i != j) {
+            result.countIncreaseBall();
         }
     }
 
-    public boolean checkStrikeAndBall(){
-        int strike = 0;
-        int ball = 0;
+    public boolean checkStrikeAndBall(int[] randNum, int[] inputNum){
+        this.randNum = randNum;
+        this.inputNum = inputNum;
 
         for(int i = 0; i<3; i++){
             for(int j = 0; j<3; j++){
-                strike = strikeCheck(i, j, strike);
-                ball = ballCheck(i, j, ball);
+                strikeCheck(i, j);
+                ballCheck(i, j);
             }
         }
-        printStrikeAndBallCount.printStrikeAndBallCount(strike, ball);
-        return strike == 3;
+        if (result.getStrike() == 0 && result.getBall() == 0){
+            Message.NOT_BALL_NOT_STRIKE.println();
+        }
+        else if(result.getStrike() == 0 && result.getBall() > 0){
+            Message.BALL.printBall(result.getBall());
+        }
+        else if(result.getStrike() > 0 && result.getBall() == 0){
+            Message.STRIKE.printStrike(result.getStrike());
+        }
+        else{
+            Message.BALL_STRIKE.printBallAndStrike(result.getBall(), result.getStrike());
+        }
+        // printStrikeAndBallCount.printStrikeAndBallCount(strike, ball);
+        // PrintStrikeAndBallCount 클래스를 남기는게 좋은지 아니면 Message 로 넘기는게 좋은지
+        if (result.getStrike() == 3){
+            result.resetBallStrike();
+            return true;
+        }
+        else{
+            result.resetBallStrike();
+            return false;
+        }
     }
 }
