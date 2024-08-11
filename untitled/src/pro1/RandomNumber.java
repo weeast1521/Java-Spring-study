@@ -3,7 +3,7 @@ package pro1;
 import java.util.Arrays;
 import java.util.Random;
 
-public class SetRandomNumber {
+public class RandomNumber {
     //멤버변수
     int[] randNum = new int[3];
 
@@ -21,10 +21,10 @@ public class SetRandomNumber {
 //            }
 //        }
         // arr 초기화를 하나하나 시키지 말고 그냥 한번에 수 3개를 받아서 중복이 있으면 다시하는 걸로 바꾸면 코드가 더 깔끔해지네
-
-        while (checkDuplication()){ //랜덤수가 3개가 다른지 체크
+        do{
             Arrays.setAll(randNum, (i) -> (rd.nextInt(9)+1)); //랜덤수 3개를 넣음
-        }
+        } while(checkDuplication());
+
     }
 
     public boolean checkDuplication() {//중복이 들어갔는지에 대한 검사 함수
