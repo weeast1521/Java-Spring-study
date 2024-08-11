@@ -5,29 +5,27 @@ import java.util.Scanner;
 public class pro1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        SetRandomNumber setRandomNumber = new SetRandomNumber();
-        SetInputNumber setInputNumber = new SetInputNumber();
+        RandomNumber setRandomNumber = new RandomNumber();
+        InputNumber InputNumber = new InputNumber();
         StrikeAndBallCheck strikeAndBallCheck = new StrikeAndBallCheck();
+        Result result = new Result();
 
-        System.out.println(Enum.START.getValue());
+        Message.GAME_START.print();
 
-        while(true){
+        while(result.getGameSet() != 2){
             setRandomNumber.setRandNum();
 
             while(true){
-                setInputNumber.setInputNum();
+                InputNumber.setInputNum();
 
-                if (strikeAndBallCheck.checkStrikeAndBall()){
-                    System.out.println(Enum.FINISH.getValue());
-                    System.out.println(Enum.GAME_START_OR_FINISH.getValue());
+                if (strikeAndBallCheck.checkStrikeAndBall(setRandomNumber.randNum, InputNumber.inputNum)){
+                    Message.GAME_FINISH.println();
+                    Message.GAME_START_OR_FINISH.println();
                     break;
                 }
             }
 
-            int gameSet = sc.nextInt();
-            if (gameSet == 2){
-                break;
-            }
+            result.setGameSet(sc.nextInt());
         }
     }
 }
