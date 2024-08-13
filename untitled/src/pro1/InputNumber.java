@@ -2,9 +2,10 @@ package pro1;
 
 import java.util.Scanner;
 
-public class SetInputNumber {
+public class InputNumber {
+
     Scanner sc = new Scanner(System.in);
-    int inputNum[] = new int[3];
+    int[] inputNum = new int[3];
     public void setNum(int tmp){
         inputNum[0] = tmp / 100;
         tmp = tmp - inputNum[0]*100;
@@ -14,18 +15,22 @@ public class SetInputNumber {
     }
     public void setInputNum(){
         // check = false;
-        System.out.print(Enum.INPUT.getValue());
+        Message.NUM_INPUT.println();
 
         setNum(sc.nextInt());
-        getError();
+        validateDuplicationOfInputNumber();
     }
-    public void getError(){
+    public void validateDuplicationOfInputNumber(){
         for(int i=0; i<3; i++){
             for(int j=0; j<i; j++){
                 if(inputNum[i] == inputNum[j]){
-                    throw new IllegalArgumentException();
+                    printError();
                 }
             }
         }
+    }
+
+    public void printError() {
+        throw new IllegalArgumentException();
     }
 }
