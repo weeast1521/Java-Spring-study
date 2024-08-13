@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class InputNumber {
 
     Scanner sc = new Scanner(System.in);
-    int inputNum[] = new int[3];
+    int[] inputNum = new int[3];
     public void setNum(int tmp){
         inputNum[0] = tmp / 100;
         tmp = tmp - inputNum[0]*100;
@@ -24,15 +24,13 @@ public class InputNumber {
         for(int i=0; i<3; i++){
             for(int j=0; j<i; j++){
                 if(inputNum[i] == inputNum[j]){
-                    printError(true);
+                    printError();
                 }
             }
         }
     }
 
-    public void printError(boolean result) {
-        if (result) {
-            throw new IllegalArgumentException();
-        }
+    public void printError() {
+        throw new IllegalArgumentException();
     }
 }

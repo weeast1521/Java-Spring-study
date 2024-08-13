@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Student {
     private static int studentNum = 1000;
-    private String name;
+    String name;
     ArrayList<Subject> subject;
 
     public Student(String name){
@@ -14,6 +14,7 @@ public class Student {
     }
 
     public static int getStudentNum() {
+        // name = "seo"; -> static을 붙이면 왜 오류가 발생하는거지?
         return studentNum;
     }
 
