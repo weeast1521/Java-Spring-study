@@ -5,31 +5,27 @@ import java.util.Scanner;
 public class pro1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        RandomNumber setRandomNumber = new RandomNumber();
+        InputNumber InputNumber = new InputNumber();
+        StrikeAndBallCheck strikeAndBallCheck = new StrikeAndBallCheck();
+        Result result = new Result();
 
-        NumBaseBall numBaseBall = new NumBaseBall();
-        boolean check = false;
+        Message.GAME_START.print();
 
-        System.out.println("숫자 야구 게임을 시작합니다.");
-        while(true){
-            numBaseBall.setRdNum();
+        while(result.getGameSet() != 2){
+            setRandomNumber.setRandNum();
 
             while(true){
-                numBaseBall.setInputNum();
-                numBaseBall.check();
-                if (numBaseBall.check){
-                    System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
-                    System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+                InputNumber.setInputNum();
+
+                if (strikeAndBallCheck.checkStrikeAndBall(setRandomNumber.randNum, InputNumber.inputNum)){
+                    Message.GAME_FINISH.println();
+                    Message.GAME_START_OR_FINISH.println();
                     break;
                 }
             }
-            int tmp = sc.nextInt();
-            if (tmp == 2){
-                break;
-            }
+
+            result.setGameSet(sc.nextInt());
         }
     }
 }
-
-
-
-// 105 - 스위치케이스 , 487 예외
