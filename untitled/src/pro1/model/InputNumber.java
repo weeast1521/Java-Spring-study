@@ -1,11 +1,13 @@
-package pro1;
+package pro1.model;
+
+import pro1.view.Message;
 
 import java.util.Scanner;
 
 public class InputNumber {
 
     Scanner sc = new Scanner(System.in);
-    int[] inputNum = new int[3];
+    public int[] inputNum = new int[3];
     public void setNum(int tmp){
         inputNum[0] = tmp / 100;
         tmp = tmp - inputNum[0]*100;

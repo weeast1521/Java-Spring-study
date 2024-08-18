@@ -1,5 +1,7 @@
 package pro1;
 
+import pro1.model.Result;
+
 import java.util.Scanner;
 
 public class pro1 {

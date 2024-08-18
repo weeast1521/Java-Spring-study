@@ -1,5 +1,7 @@
 package pro1;
 
+import pro1.model.Result;
+
 public class StrikeAndBallCheck {
     // PrintStrikeAndBallCount printStrikeAndBallCount = new PrintStrikeAndBallCount();
     Result result = new Result();
