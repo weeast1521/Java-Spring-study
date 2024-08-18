@@ -1,6 +1,10 @@
-package pro1;
+package pro1.controller;
 
+import pro1.model.InputNumber;
+import pro1.model.RandomNumber;
 import pro1.model.Result;
+import pro1.view.Message;
+import pro1.view.StrikeAndBallCheck;
 
 import java.util.Scanner;
 
