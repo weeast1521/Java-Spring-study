@@ -1,6 +1,7 @@
-package pro1;
+package pro1.view;
 
 import pro1.model.Result;
+import pro1.view.Message;
 
 public class StrikeAndBallCheck {
     // PrintStrikeAndBallCount printStrikeAndBallCount = new PrintStrikeAndBallCount();
