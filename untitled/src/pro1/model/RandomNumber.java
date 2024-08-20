@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class RandomNumber {
     //멤버변수
-    public int[] randNum = new int[3];
+    private final int[] randNum = new int[3];
 
     Random rd = new Random();
 
