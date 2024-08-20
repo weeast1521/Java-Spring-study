@@ -1,8 +1,10 @@
-package pro1;
+package pro1.model;
+
+import pro1.view.Message;
 
 import java.util.Scanner;
 
-public class InputNumber {
+public class UserInputNumber {
 
     Scanner sc = new Scanner(System.in);
     int[] inputNum = new int[3];

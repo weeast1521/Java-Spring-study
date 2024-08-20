@@ -1,4 +1,4 @@
-package pro1;
+package pro1.model;
 
 public class Result { // 이런 클래스는 어떤식으로 이름을 짓는게 좋은지..?
     private int strike = 0;

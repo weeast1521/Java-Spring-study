@@ -1,4 +1,4 @@
-package pro1;
+package pro1.view;
 
 public enum Message {
     GAME_START("숫자 야구 게임을 시작합니다."),
