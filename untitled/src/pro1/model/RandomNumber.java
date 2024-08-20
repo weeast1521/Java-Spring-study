@@ -9,6 +9,9 @@ public class RandomNumber {
 
     Random rd = new Random();
 
+    public int[] getRandNum(){
+        return this.randNum;
+    }
     public void setRandNum() {
         //람다식을 통해서 3개의 값을 바꿔주는 역할
         do{

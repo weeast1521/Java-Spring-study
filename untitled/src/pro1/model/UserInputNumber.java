@@ -8,6 +8,9 @@ public class UserInputNumber {
 
     Scanner sc = new Scanner(System.in);
     private final int[] inputNum = new int[3];
+    public int[] getInputNum(){
+        return this.inputNum;
+    }
     public void setNum(int tmp){
         inputNum[0] = tmp / 100;
         tmp = tmp - inputNum[0]*100;

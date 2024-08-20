@@ -24,7 +24,7 @@ public class pro1 {
             while(true){
                 UserInputNumber.setInputNum();
 
-                if (strikeAndBallCheck.checkStrikeAndBall(setRandomNumber.randNum, UserInputNumber.inputNum)){
+                if (strikeAndBallCheck.checkStrikeAndBall(setRandomNumber.getRandNum(), UserInputNumber.getInputNum())){
                     Message.GAME_FINISH.println();
                     Message.GAME_START_OR_FINISH.println();
                     break;
