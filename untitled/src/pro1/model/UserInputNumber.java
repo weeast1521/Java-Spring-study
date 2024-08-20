@@ -4,10 +4,10 @@ import pro1.view.Message;
 
 import java.util.Scanner;
 
-public class InputNumber {
+public class UserInputNumber {
 
     Scanner sc = new Scanner(System.in);
-    public int[] inputNum = new int[3];
+    int[] inputNum = new int[3];
     public void setNum(int tmp){
         inputNum[0] = tmp / 100;
         tmp = tmp - inputNum[0]*100;
