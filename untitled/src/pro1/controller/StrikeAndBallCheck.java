@@ -9,6 +9,8 @@ public class StrikeAndBallCheck {
     int[] randNum = new int[3];
     int[] inputNum = new int[3];
 
+    // result 객체 생성을 해서 사용하면 모델과 커뮤니케이션을 하는것임, randNum inputNum 같은 것도 모델로 들어가게된다 매개변수로 받는것도 x
+
     public void strikeCheck(int i, int j){
         if(randNum[i] == inputNum[j] && i == j){
             result.countIncreaseStrike();
@@ -21,11 +23,9 @@ public class StrikeAndBallCheck {
     }
 
     public boolean checkStrikeAndBall(int[] randNum, int[] inputNum){
-        this.randNum = randNum;
-        this.inputNum = inputNum;
-
         for(int i = 0; i<3; i++){
             for(int j = 0; j<3; j++){
+                if i == j &&
                 strikeCheck(i, j);
                 ballCheck(i, j);
             }
