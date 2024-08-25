@@ -1,9 +1,8 @@
 package pro1.model;
 
-public class Result { // 이런 클래스는 어떤식으로 이름을 짓는게 좋은지..?
+public class GameModel { // 이런 클래스는 어떤식으로 이름을 짓는게 좋은지..?
     private int strike = 0;
     private int ball = 0;
-    private int gameSet = 0;
 
     public int getStrike() {
         return strike;
@@ -23,12 +22,5 @@ public class Result { // 이런 클래스는 어떤식으로 이름을 짓는게
     public void resetBallStrike(){
         ball = 0;
         strike = 0;
-    }
-    public int getGameSet() {
-        return gameSet;
-    }
-
-    public void setGameSet(int gameSet) {
-        this.gameSet = gameSet;
     }
 }
