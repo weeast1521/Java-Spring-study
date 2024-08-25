@@ -20,7 +20,7 @@ public class UserInputNumber {
     }
     public void setInputNum(){
         // check = false;
-        Message.NUM_INPUT.println();
+        Message.NUM_INPUT.print();
 
         setNum(sc.nextInt());
         validateDuplicationOfInputNumber();
