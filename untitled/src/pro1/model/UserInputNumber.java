@@ -7,7 +7,10 @@ import java.util.Scanner;
 public class UserInputNumber {
 
     Scanner sc = new Scanner(System.in);
-    int[] inputNum = new int[3];
+    private final int[] inputNum = new int[3];
+    public int[] getInputNum(){
+        return this.inputNum;
+    }
     public void setNum(int tmp){
         inputNum[0] = tmp / 100;
         tmp = tmp - inputNum[0]*100;
@@ -17,7 +20,7 @@ public class UserInputNumber {
     }
     public void setInputNum(){
         // check = false;
-        Message.NUM_INPUT.println();
+        Message.NUM_INPUT.print();
 
         setNum(sc.nextInt());
         validateDuplicationOfInputNumber();

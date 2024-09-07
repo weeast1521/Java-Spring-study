@@ -5,10 +5,13 @@ import java.util.Random;
 
 public class RandomNumber {
     //멤버변수
-    public int[] randNum = new int[3];
+    private final int[] randNum = new int[3];
 
     Random rd = new Random();
 
+    public int[] getRandNum(){
+        return this.randNum;
+    }
     public void setRandNum() {
         //람다식을 통해서 3개의 값을 바꿔주는 역할
         do{
