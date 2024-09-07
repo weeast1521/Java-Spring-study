@@ -3,10 +3,12 @@ package pro1.controller;
 import pro1.model.RandomNumber;
 import pro1.model.GameModel;
 import pro1.model.UserInputNumber;
+import pro1.view.GameView;
 import pro1.view.Message;
 
 public class StrikeAndBallCheck {
     GameModel gameModel = new GameModel();
+    GameView gameView = new GameView();
     UserInputNumber userInputNumber;
     RandomNumber randomNumber;
 //    int[] randNum = new int[3];
@@ -28,28 +30,16 @@ public class StrikeAndBallCheck {
         }
     }
 
-    public boolean checkStrikeAndBall(){
+    public void checkStrikeAndBall(){
         for(int i = 0; i<3; i++){
             for(int j = 0; j<3; j++){
                 checkStrike(i, j);
                 checkBall(i, j);
             }
         }
-        if (gameModel.getStrike() == 0 && gameModel.getBall() == 0){
-            Message.NOT_BALL_NOT_STRIKE.println();
-        }
-        else if(gameModel.getStrike() == 0 && gameModel.getBall() > 0){
-            Message.BALL.printBall(gameModel.getBall());
-        }
-        else if(gameModel.getStrike() > 0 && gameModel.getBall() == 0){
-            Message.STRIKE.printStrike(gameModel.getStrike());
-        }
-        else{
-            Message.BALL_STRIKE.printBallAndStrike(gameModel.getBall(), gameModel.getStrike());
-        }
-        // printStrikeAndBallCount.printStrikeAndBallCount(strike, ball);
-        // PrintStrikeAndBallCount 클래스를 남기는게 좋은지 아니면 Message 로 넘기는게 좋은지
-        if (gameModel.getStrike() == 3){
+    }
+    public boolean checkThreeStrike(int strike){
+        if (strike == 3){
             gameModel.resetBallStrike();
             return true;
         }
