@@ -1,7 +1,14 @@
 ### IntelliJ IDEA ###
 untitled/out/
+untitled/.idea/
+untitled/src/연습장
+
+
 !**/src/main/**/out/
 !**/src/test/**/out/
+out/
+.idea/
+자바스터디.iml
 
 ### Eclipse ###
 .apt_generated
