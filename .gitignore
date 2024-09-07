@@ -1,5 +1,5 @@
 ### IntelliJ IDEA ###
-out/
+untitled/out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
@@ -28,7 +28,8 @@ bin/
 ### Mac OS ###
 .DS_Store
 
-
+###
+연습장/
 
 ### Intellij ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
